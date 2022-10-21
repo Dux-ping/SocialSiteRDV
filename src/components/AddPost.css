@@ -1,8 +1,12 @@
+.addpost12 {
+  margin-top: 4.5rem;
+  height: calc(100vh - 8rem);
+}
+
 body {
   background: linear-gradient(-45deg, #3c3c3ccd, #2b2424b7, #00000047, #010403);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
-  height: 100vh;
 }
 
 @keyframes gradient {

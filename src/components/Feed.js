@@ -3,10 +3,10 @@ import Post from "./Post";
 
 function Feed(props) {
   const buildFeed = () => {
-    let existingPosts = props.posts.map((post) => {
+    let existingPosts = props.posts?.map((post, i) => {
       return (
         <Post
-          key={post.id}
+          key={i}
           username={post.username}
           body={post.body}
           image={post.image}
@@ -18,7 +18,7 @@ function Feed(props) {
     return existingPosts;
   };
 
-  return <div className="margin-bottom">{buildFeed()}</div>;
+  return <div style={{ marginTop: "5rem" }}>{buildFeed()}</div>;
 }
 
 export default Feed;

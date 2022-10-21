@@ -15,6 +15,7 @@ function AddPost(props) {
     username: "",
     body: "",
     image: "",
+    // comment: [{ username: test, comment: "aiosjdaisod" }],
     // Default form values
   });
 
@@ -32,10 +33,12 @@ function AddPost(props) {
       let newPosts = [...posts, formValues];
       return newPosts;
     });
+
     toastr["success"](
       "Your post has been published! Head over to the feed to check it out",
       "Success"
     );
+
     // Increment post ID so no 2 posts have the same ID
     newPostId++;
     // Reset form values
@@ -45,7 +48,7 @@ function AddPost(props) {
       body: "",
       image: "",
       likes: 0,
-      comments: [],
+      // comments: [{ username: "test", comment: "example" }],
     });
   };
 
@@ -77,7 +80,7 @@ function AddPost(props) {
               onChange={(event) => handleChange(event)}
             />
           </Form.Group>
-          {/* Body field */}
+          {/* Image field */}
           <Form.Group className="row" controlId="postImage">
             <Form.Label>Image link:</Form.Label>
             <Form.Control

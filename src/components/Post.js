@@ -3,104 +3,111 @@ import { HandThumbsUp } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 import "./Post.css";
 
 function Post(props) {
-	const [comments, changeComments] = useState(props.comment);
+  const [comments, changeComments] = useState(props.comment || []);
 
-	const [commentField, changeCommentField] = useState([{ field: "" }]);
+  const [commentField, changeCommentField] = useState("");
 
-	const [liked, changeLiked] = useState(false);
+  const [liked, changeLiked] = useState(false);
 
-	const [likeCount, changeLikeCount] = useState(props.likes);
+  const [likeCount, changeLikeCount] = useState(props.likes);
 
-	// useEffect(() => {
-	// 	const stringFromLS = localStorage.getItem("commentsList");
-	// 	changeComments(JSON.parse(stringFromLS) || []);
-	// }, []);
+  // useEffect(() => {
+  //   const stringFromLS = localStorage.getItem("commentsList");
+  //   changeComments(JSON.parse(stringFromLS) || []);
+  // }, []);
 
-	const handleLike = () => {
-		if (!liked) {
-			changeLikeCount(likeCount + 1);
-			changeLiked(true);
-		} else {
-			changeLikeCount(likeCount - 1);
-			changeLiked(false);
-		}
-	};
+  const handleLike = () => {
+    if (!liked) {
+      changeLikeCount(likeCount + 1);
+      changeLiked(true);
+    } else {
+      changeLikeCount(likeCount - 1);
+      changeLiked(false);
+    }
+  };
 
-	const buildComments = () => {
-		let createdComments = comments.map((comment) => {
-			return (
-				<p key={comment.username}>
-					{comment.username}: {comment.comment}
-				</p>
-			);
-		});
-		return createdComments;
-	};
+  const buildComments = () => {
+    let createdComments = comments?.map((comment) => {
+      return (
+        <p key={comment.username}>
+          {comment.username}: {comment.comment}
+        </p>
+      );
+    });
+    return createdComments;
+  };
 
-	const handleChange = (event) => {
-		let newComment = event.target.value;
-		let key = event.target.name;
-		const newState = { ...commentField };
-		newState[key] = newComment;
+  const handleChange = (event) => {
+    let newComment = event.target.value;
+    let key = event.target.name;
+    const newState = { ...commentField };
+    newState[key] = newComment;
 
-		changeCommentField(newState);
-	};
+    changeCommentField(newState);
+  };
 
-	const submitComment = () => {
-		changeComments((comments) => {
-			let newComments = [...comments, commentField];
-			// localStorage.setItem("commentsList", JSON.stringify(newComments));
-			newComments[newComments.length - 1]["name"] = "You";
-			return newComments;
-		});
-	};
+  const submitComment = () => {
+    changeComments((comments) => {
+      let newComments = [...comments, commentField];
 
-	return (
-		<div>
-			<Card className="card" border="primary">
-				<Card.Text className="username-label">{props.username}</Card.Text>
-				<Card.Body>
-					<Card.Text>{props.body}</Card.Text>
-					<Card.Img className="img-max-size" src={props.image} />
-				</Card.Body>
+      // localStorage.setItem("commentsList", JSON.stringify(newComments));
 
-				<div className="likes-comments">
-					<div style={{ display: "flex", alignItems: "end" }}>
-						<div className="like-box">{likeCount} Likes</div>
-					</div>
-					<div className="comment-box">{buildComments()}</div>
-				</div>
+      newComments[comments.length]["username"] = "You";
+      toastr["success"](
+        "Your comment has been published! Head over to the feed to check it out",
+        "Success"
+      );
+      return newComments;
+    });
+  };
 
-				<div className="like-comment">
-					<Button variant="primary" onClick={() => handleLike()}>
-						<HandThumbsUp /> Like
-					</Button>
-					<Form style={{ display: "flex", gap: "0.5rem" }}>
-						<Form.Group controlId="comment">
-							<Form.Control
-								className="comment-form"
-								value={comments.comment}
-								name="comment"
-								type="text"
-								onChange={(event) => {
-									handleChange(event);
-								}}
-							/>
-						</Form.Group>
-						<img
-							className="send-icon"
-							src="https://img.icons8.com/ios-glyphs/344/filled-sent.png"
-							alt="Send icon"
-							onClick={() => submitComment()}
-						/>
-					</Form>
-				</div>
-			</Card>
-		</div>
-	);
+  return (
+    <div>
+      <Card className="card" border="primary">
+        <Card.Text className="username-label">{props.username}</Card.Text>
+        <Card.Body>
+          <Card.Text>{props.body}</Card.Text>
+          <Card.Img className="img-max-size" src={props.image} />
+        </Card.Body>
+
+        <div className="likes-comments">
+          <div style={{ display: "flex", alignItems: "end" }}>
+            <div className="like-box">{likeCount} Likes</div>
+          </div>
+          <div className="comment-box">{buildComments()}</div>
+        </div>
+        <div className="like-comment">
+          <Button variant="primary" onClick={() => handleLike()}>
+            <HandThumbsUp /> Like
+          </Button>
+          <Form style={{ display: "flex", gap: "0.5rem" }}>
+            <Form.Group controlId="comment">
+              <Form.Control
+                className="comment-form"
+                value={comments?.comments}
+                name="comment"
+                type="text"
+                onChange={(event) => {
+                  handleChange(event);
+                }}
+              />
+            </Form.Group>
+            <img
+              className="send-icon"
+              src="https://img.icons8.com/ios-glyphs/344/filled-sent.png"
+              alt="Send icon"
+              onClick={() => submitComment()}
+            />
+          </Form>
+        </div>
+      </Card>
+    </div>
+  );
 }
 
 export default Post;
