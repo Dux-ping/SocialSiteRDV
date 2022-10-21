@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer text-white bg-dark p-3 position-fiexed text-center">
-        <p>&copy; {`Ross-Diana-Viorel ${year}`}</p>
+        <p>&copy; {`Diana-Ross-Viorel ${year}`}</p>
       </div>
     </footer>
   );

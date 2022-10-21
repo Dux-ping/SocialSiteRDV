@@ -8,7 +8,7 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar fixed="top" bg="dark" expand="lg">
       <Container>
         <Navbar.Brand className="Title" href="/#/home">
           HI5
