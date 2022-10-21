@@ -1,0 +1,58 @@
+body {
+  background: linear-gradient(-45deg, #3c3c3ccd, #2b2424b7, #00000047, #010403);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.buttonpost {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 0.3rem;
+}
+
+.form-label {
+  display: flex;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.buttonpost {
+  color: white;
+  background-color: black;
+  border: #010403;
+}
+
+.buttonpost:hover {
+  background-color: black !important;
+  color: rgb(246, 255, 0);
+}
+
+.card1 {
+  display: flex;
+  font-size: 1.3rem;
+  text-align: start;
+  color: #000000c4;
+  background-color: #a1bb77;
+  width: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 80vw;
+  }
+}

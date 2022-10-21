@@ -1,0 +1,105 @@
+.img-max-size {
+  max-width: 600px;
+}
+.username-label {
+  display: flex;
+  font-size: 2rem !important;
+  align-self: flex-start;
+  margin-left: 6rem;
+}
+
+.like-comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.card {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50rem;
+  margin: auto;
+  padding: 1rem 0 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #a1bb77;
+  border-radius: 5px;
+  border-color: #a1bb77 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.likes-comments {
+  display: flex;
+  width: 20.5rem;
+  gap: 1rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: white;
+  background-color: black;
+  border: #010403;
+}
+
+.btn:hover {
+  background-color: black !important;
+  color: rgb(246, 255, 0);
+}
+
+.like-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.8rem;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+
+input {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.send-icon {
+  border: 1px solid;
+  border-radius: 30px;
+  padding: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 30px;
+  width: 30px;
+}
+
+p {
+  margin-bottom: 0rem;
+}
+
+username-label {
+  text-align: left !important;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 80vw;
+  }
+}
