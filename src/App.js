@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import AddPost from "./components/AddPost";
 import Feed from "./components/Feed";
 import Navigation from "./components/Navigation";
@@ -16,7 +16,7 @@ function App() {
       likes: 5,
       comments: [
         { username: "Mark", comment: "ha ha ha !" },
-        { username: "George", comment: "testttt" },
+        { username: "George", comment: "OmG" },
       ],
     },
     {
@@ -42,8 +42,10 @@ function App() {
   return (
     <>
       <Navigation />
+
       <Routes>
         <Route index path="/home" element={<Feed posts={posts || []} />} />
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route
           exact
           path="/newpost"
