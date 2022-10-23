@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Dux-ping/SocialSiteRDV/static/css/main.d87fa0b4.css",
-    "main.js": "/Dux-ping/SocialSiteRDV/static/js/main.3066569c.js",
-    "static/js/787.af02f3ae.chunk.js": "/Dux-ping/SocialSiteRDV/static/js/787.af02f3ae.chunk.js",
-    "index.html": "/Dux-ping/SocialSiteRDV/index.html",
-    "main.d87fa0b4.css.map": "/Dux-ping/SocialSiteRDV/static/css/main.d87fa0b4.css.map",
-    "main.3066569c.js.map": "/Dux-ping/SocialSiteRDV/static/js/main.3066569c.js.map",
-    "787.af02f3ae.chunk.js.map": "/Dux-ping/SocialSiteRDV/static/js/787.af02f3ae.chunk.js.map"
+    "main.css": "/SocialSiteRDV/static/css/main.d87fa0b4.css",
+    "main.js": "/SocialSiteRDV/static/js/main.7a09b08d.js",
+    "static/js/787.af02f3ae.chunk.js": "/SocialSiteRDV/static/js/787.af02f3ae.chunk.js",
+    "index.html": "/SocialSiteRDV/index.html",
+    "main.d87fa0b4.css.map": "/SocialSiteRDV/static/css/main.d87fa0b4.css.map",
+    "main.7a09b08d.js.map": "/SocialSiteRDV/static/js/main.7a09b08d.js.map",
+    "787.af02f3ae.chunk.js.map": "/SocialSiteRDV/static/js/787.af02f3ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d87fa0b4.css",
-    "static/js/main.3066569c.js"
+    "static/js/main.7a09b08d.js"
   ]
 }
